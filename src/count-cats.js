@@ -1,8 +1,11 @@
 module.exports = function countCats(arr) {
-  function cat(value) {
-    return value === "^^";
-  }
-
-  let filter = arr.flat().filter(cat)
-  return(filter.lenght)
+  let count = 0;
+  arr.forEach(function (e) {
+      for (i of e) {
+          if (i === '^^') {
+              count++;
+          }
+      }
+  });
+  return count;
 };
